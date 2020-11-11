@@ -7,9 +7,10 @@ import murkup from '../src/handlTamplate/main.hbs';
 
 const ref = {
     main: document.querySelector('.main'),
-    input: document.querySelector('.input')
+    input: document.querySelector('.input'),
+    btn: document.querySelector('.btn-del')
 }
-
+ref.btn.addEventListener('click', onDel)
 
 
 ref.input.addEventListener('input', _.debounce(onInput, 500)
@@ -33,7 +34,9 @@ function onInput(event)
 }
 
 
-
+function onDel(){
+    location.reload()
+}
 
 
 
