@@ -1,0 +1,55 @@
+{{#each this}}
+<div class="box">
+    <h1>{{name}}</h1>
+    <div class="container">
+        <div class="info-container">
+            <ul>
+                <li>
+                    <p>Capital: {{capital}}</p>
+                </li>
+                <li>
+                    <p>Population: {{population}}</p>
+                </li>
+                <li>
+                    <p>Region: {{region}}</p>
+                </li>
+                <li>
+                    <p>Subregion: {{subregion}}</p>
+                </li>
+
+                <li>
+                    <p>Language</p>
+                    <ul class="lang-list">
+                        {{#each languages}}
+                        <li>{{this.name}}</li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li>
+                    <p>currencies</p>
+                    <ul class=" country-currencies">
+                        {{#each currencies }}
+                        <li>{{this.name}}</li>
+                        {{/each}}
+                    </ul>
+
+                </li>
+                <li>
+                    <p>borders</p>
+                    <ul class="country-border">
+                        {{#each borders }}
+                        <li>{{this}}</li>
+                        {{/each}}
+
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="flag-container">
+            <img class="flag-img" src="{{flag}}" alt="{{name}}" />
+        </div>
+    </div>
+</div>
+
+{{/each}}
