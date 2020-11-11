@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OleksandrHrubyi/goit-js-hw-11-timer"
+    "url": "git+https://github.com/OleksandrHrubyi/goit-js-hw-12-countries"
   },
   "keywords": [],
   "author": "Oleksandr Hrubyi",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://OleksandrHrubyi.github.io/goit-js-hw-11-timer",
+  "homepage": "https://OleksandrHrubyi.github.io/goit-js-hw-12-countries",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
