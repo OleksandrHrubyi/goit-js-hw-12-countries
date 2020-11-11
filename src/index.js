@@ -1,21 +1,40 @@
 import './styles.css';
+const lodash = require('lodash');
 
 import murkup from '../src/handlTamplate/main.hbs';
 
 
 
 const ref = {
-    main: document.querySelector('.main')
+    main: document.querySelector('.main'),
+    input: document.querySelector('.input')
 }
+
+
+
+ref.input.addEventListener('input', _.debounce(onInput, 500)
+)
    
 
-fetch('https://restcountries.eu/rest/v2/name/france').then(r => {
+
+function onInput(event)
+{
+    
+    console.log(event.target.value)
+    let name = event.target.value
+    
+    fetch(`https://restcountries.eu/rest/v2/name/${name}`).then(r => {
     return r.json()
 }).then(country => {
     ref.main.insertAdjacentHTML('beforeend', murkup(country))
     console.log(country)
     
 })
+}
 
 
 
+
+
+
+ 

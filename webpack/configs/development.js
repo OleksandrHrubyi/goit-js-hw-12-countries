@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('../utils/paths');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
 
 module.exports = env => ({
   devtool: 'cheap-eval-source-map',
@@ -21,6 +23,10 @@ module.exports = env => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+    }),
+     new LodashModuleReplacementPlugin({
+         'collections': true,
+         'paths': true,
     }),
   ],
   devServer: {
