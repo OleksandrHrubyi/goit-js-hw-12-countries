@@ -1,16 +1,41 @@
 .body {
-  background-color: antiquewhite;
+  background: url(./img/fon1.jpg) no-repeat center top fixed;
+  padding: 30px;
+
+  background-color: black;
+
+  background-size: cover;
 }
-.container {
+
+.body-container {
+  background-color: rgba(0, 0, 0, 0.384);
+  color: white;
   display: flex;
-  justify-content: baseline;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
 }
 
 .info-container {
+  padding: 10px 0px;
+  width: 100%;
   margin-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.274);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 p {
@@ -21,13 +46,74 @@ ul {
 }
 
 .flag-container {
-  border: 2px solid black;
-  width: 200px;
-  height: 140px;
-  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.274);
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.btn-del {
+  width: 60px;
+  border-radius: 5px;
+  background-color: rgba(164, 39, 189, 0.274);
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.header-info {
+  font-size: x-large;
+  font-family: cursive;
+}
+
+.input {
+  border-radius: 5px;
+}
+
+.list-container {
+  background-color: rgb(71, 129, 255);
+  color: black;
+  width: 100px;
+  height: 100px;
+}
+
+.list-box {
+  margin-top: 30px;
+}
+
+.box-list-item {
+  display: flex;
+}
+
+.box-name {
+  margin-right: auto;
+  min-width: 100px;
+}
+
+@media screen and (min-width: 353px) {
+  .box-name {
+    margin-right: 50px;
+  }
+}
+
+.dash {
+  list-style-type: "–";
+}
+
+.value {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.box-text {
+  font-size: x-large;
 }
 
 .flag-img {
   width: 100%;
-  height: 100%;
 }

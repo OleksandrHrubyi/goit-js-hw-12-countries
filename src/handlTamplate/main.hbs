@@ -5,23 +5,23 @@
         <div class="info-container">
             <ul>
                 <li>
-                    <p>Capital: {{capital}}</p>
+                    <p>Capital: <span class="value">{{capital}}</span></p>
                 </li>
                 <li>
-                    <p>Population: {{population}}</p>
+                    <p>Population: <span class="value">{{population}}</span> </p>
                 </li>
                 <li>
-                    <p>Region: {{region}}</p>
+                    <p>Region: <span class="value">{{region}}</span> </p>
                 </li>
                 <li>
-                    <p>Subregion: {{subregion}}</p>
+                    <p>Subregion: <span class="value">{{subregion}}</span> </p>
                 </li>
 
                 <li>
                     <p>Language</p>
-                    <ul class="lang-list">
+                    <ul class=" lang-list">
                         {{#each languages}}
-                        <li>{{this.name}}</li>
+                        <li class="dash"><span class="value">{{this.name}}</span></li>
                         {{/each}}
                     </ul>
                 </li>
@@ -29,25 +29,25 @@
                     <p>currencies</p>
                     <ul class=" country-currencies">
                         {{#each currencies }}
-                        <li>{{this.name}}</li>
+                        <li class="dash"><span class="value">{{this.name}}</span> </li>
                         {{/each}}
                     </ul>
 
                 </li>
                 <li>
                     <p>borders</p>
-                    <ul class="country-border">
+                    <ol class="country-border">
                         {{#each borders }}
-                        <li>{{this}}</li>
+                        <li><span class="value">{{this}}</span></li>
                         {{/each}}
 
 
-                    </ul>
+                    </ol>
                 </li>
             </ul>
         </div>
         <div class="flag-container">
-            <img class="flag-img" src="{{flag}}" alt="{{name}}" />
+            <img class="flag-img" src="{{flag}}" alt="{{name}}" " />
         </div>
     </div>
 </div>
