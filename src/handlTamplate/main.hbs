@@ -26,7 +26,7 @@
                     </ul>
                 </li>
                 <li>
-                    <p>currencies</p>
+                    <p>Currencies</p>
                     <ul class=" country-currencies">
                         {{#each currencies }}
                         <li class="dash"><span class="value">{{this.name}}</span> </li>
@@ -35,7 +35,7 @@
 
                 </li>
                 <li>
-                    <p>borders</p>
+                    <p>Borders</p>
                     <ol class="country-border">
                         {{#each borders }}
                         <li><span class="value">{{this}}</span></li>
@@ -47,9 +47,8 @@
             </ul>
         </div>
         <div class="flag-container">
-            <img class="flag-img" src="{{flag}}" alt="{{name}}" " />
+            <img class="flag-img" src="{{flag}}" alt="{{name}}">
         </div>
     </div>
 </div>
-
 {{/each}}
