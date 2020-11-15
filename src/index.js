@@ -8,33 +8,33 @@ import markup from '../src/handlTamplate/main.hbs';
 import remarkup from '../src/handlTamplate/list.hbs';
 
 const lodash = require('lodash');
-//const {error} = require('@pnotify/core')
 const mainHref = 'https://restcountries.eu/rest';
 const ref = {
     main: document.querySelector('.js-search'),
     input: document.querySelector('.input-text'),
     btn: document.querySelector('.btn-del'),
-    app: document.querySelector('.app')
+    app: document.querySelector('.app'),
 }
 
 let counter = 0;
 
 
-ref.btn.addEventListener('click', onDel)
-ref.input.addEventListener('input', _.debounce(onInput, 1000))
+ref.btn.addEventListener('click', onDel);
+ref.input.addEventListener('input', _.debounce(onInput, 1000));
 
 
 function onInput(event)
 {
-    let name = event.target.value.trim()
+    let name = event.target.value.trim();
    
     
-    if(name.length === 0)
+    if (name.length === 0)
     {
         clear();
         return;
       
     }
+
     else {
         counter += 1;
         if (counter === 1)
@@ -44,54 +44,51 @@ function onInput(event)
             }).then(country => {
                 render(country)
             }).catch(clear)
-        }
-        return
-    }
+        };
+        return;
+    };
         
+};
+
+
+
+
+function onDel() {
+    clear();
 }
 
 
 
-
-function onDel(){
-   clear()
-   }
-
-
-
 function render(country) {
-
-  if (country.length === 1)
-    {
-        ref.main.insertAdjacentHTML('beforeend', markup(country))
-        counter += 1
-        
-        return
     
-        }
+    if (country.length === 1)
+    {
+        ref.main.insertAdjacentHTML('beforeend', markup(country));
+        counter += 1;
+        return;
+    }
    
 
-     if (country.length <= 10 && country.length > 1) {
-         ref.main.insertAdjacentHTML('beforeend', remarkup(country))
-        console.log(country)
-       return
+    else if (country.length <= 10 && country.length > 1)
+    {
+        ref.main.insertAdjacentHTML('beforeend', remarkup(country));
+        return;
     }
     
+
+   else if (country.length > 10)
+    {
+        errorTooManySearching();
+        return;
+    }
     
-    
-      if (country.length > 10) {
-           errorTooManySearching()
-         return
-      }
-    
-      else {
-          errorNotFound()
-         return
+    else
+    {
+        errorNotFound();
+        return;
           
-      }
+    }
    
-    
-  
 }
  
 
@@ -101,7 +98,6 @@ function clear()
     ref.main.innerHTML = "";
     counter = 0;
     ref.input.value = "";
-   
 }
 
 
