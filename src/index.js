@@ -1,16 +1,20 @@
 import './styles.css';
-import '@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css'
+import { error } from "@pnotify/core";
+import "@pnotify/core/dist/PNotify.css";
+import "@pnotify/core/dist/BrightTheme.css";
+import * as Confirm from "@pnotify/confirm";
+import "@pnotify/confirm/dist/PNotifyConfirm.css";
 import markup from '../src/handlTamplate/main.hbs';
 import remarkup from '../src/handlTamplate/list.hbs';
 
 const lodash = require('lodash');
-const {error} = require('@pnotify/core')
+//const {error} = require('@pnotify/core')
 const mainHref = 'https://restcountries.eu/rest';
 const ref = {
     main: document.querySelector('.js-search'),
     input: document.querySelector('.input-text'),
     btn: document.querySelector('.btn-del'),
+    app: document.querySelector('.app')
 }
 
 let counter = 0;
@@ -76,20 +80,12 @@ function render(country) {
     
     
       if (country.length > 10) {
-            error({
-                text: 'to many country',
-                type: 'info',
-           
-            })
+           errorTooManySearching()
          return
       }
     
       else {
-           error({
-                text: 'Sorry, we can not find your country, please try again',
-                type: 'info',
-           
-            })
+          errorNotFound()
          return
           
       }
@@ -111,5 +107,55 @@ function clear()
 
 
 
+
+
+
+function errorNotFound() {
+  error({
+    text:
+      "Sorry, we cant find your country. Please try again",
+    modules: new Map([
+      [
+        Confirm,
+        {
+          confirm: true,
+          buttons: [
+            {
+              text: "Ok",
+              primary: true,
+              click: notice => {
+                notice.close();
+              }
+            }
+          ]
+        }
+      ]
+    ])
+  });
+}
+
+function errorTooManySearching() {
+  error({
+    text:
+      "Sorry, too many matches found. Please enter a more specific query.",
+    modules: new Map([
+      [
+        Confirm,
+        {
+          confirm: true,
+          buttons: [
+            {
+              text: "Ok",
+              primary: true,
+              click: notice => {
+                notice.close();
+              }
+            }
+          ]
+        }
+      ]
+    ])
+  });
+}
 
 
